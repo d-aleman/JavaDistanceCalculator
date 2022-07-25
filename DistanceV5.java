@@ -7,7 +7,7 @@ public class DistanceV5 {
         
         do {
             System.out.println("\n-----------------------------------------------------");
-            System.out.println("Distance calculator (enter a unit,\nthen 0 for both values to quit)");
+            System.out.println("Distance calculator (To quit, enter a unit then enter 0 for both values)");
             System.out.println("-----------------------------------------------------");
             
             dc.getUserInput();
