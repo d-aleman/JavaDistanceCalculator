@@ -10,9 +10,9 @@ public class DistanceCalculator {
 		this.time = 0;
 	}
 
-	public void getUserInput() throws NumberFormatException, IOException {
-		this.speed = this.getDouble("Enter a speed (miles/hour): ");
-		this.time = this.getDouble("Enter a time traveled (minutes): ");
+	public void getUserInput() {
+		this.speed = this.getNonnegDouble("Enter a speed (miles/hour): ");
+		this.time = this.getNonnegDouble("Enter a time traveled (minutes): ");
 	}
 
 	public void printDistance() {
@@ -49,15 +49,5 @@ public class DistanceCalculator {
 		} while (!valid);
 		return x;
 	} // end of getNonnegDouble()
-    
-    // get a double from the user: no error handling
-    public double getDouble(String prompt) throws NumberFormatException, IOException {
-        BufferedReader cin = new BufferedReader(new InputStreamReader(System.in));
-
-        System.out.print(prompt);
-        double x = Double.parseDouble(cin.readLine());
-
-        return x;
-    } // end of getDouble()
 	
 } // end DistanceCalculator class
