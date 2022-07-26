@@ -1,9 +1,7 @@
 public class DistanceV5 {
 	
 	public static void main(String[] args) {
-		
-		System.out.println("A distance calculator\n");
-		
+
 		DistanceCalculator dc = new DistanceCalculator();
         boolean doContinue = true;
         
