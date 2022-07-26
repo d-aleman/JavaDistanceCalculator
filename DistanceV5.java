@@ -5,7 +5,7 @@ public class DistanceV5 {
 		DistanceCalculator dc = new DistanceCalculator();
         boolean doContinue = true;
         
-        System.out.println("A distance calculator in Java that creates a conflict\n");
+        System.out.println("A distance calculator in Java that creates a conflict with develop\n");
         
         do {
             System.out.println("\n-----------------------------------------------------");
