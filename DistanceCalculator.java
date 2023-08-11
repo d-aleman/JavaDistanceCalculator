@@ -9,6 +9,9 @@ public class DistanceCalculator {
 		this.speed = 0;
 		this.time = 0;
 	}
+    
+    public double getSpeed() { return this.speed; }
+    public double getTime() { return this.time; }
 
 	public void getUserInput() {
 		this.speed = this.getNonnegDouble("Enter a speed (miles/hour): ");
