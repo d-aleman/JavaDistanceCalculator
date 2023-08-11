@@ -10,9 +10,9 @@ public class DistanceCalculator {
 		this.time = 0;
 	}
 
-	public void getUserInput() throws NumberFormatException, IOException {
-		this.speed = this.getDouble("Enter a speed (miles/hour): ");
-		this.time = this.getDouble("Enter a time traveled (minutes): ");
+	public void getUserInput() {
+		this.speed = this.getNonnegDouble("Enter a speed (miles/hour): ");
+		this.time = this.getNonnegDouble("Enter a time traveled (minutes): ");
 	}
 
 	public void printDistance() {
@@ -22,15 +22,32 @@ public class DistanceCalculator {
 	public double calcDist() {
 		return this.speed * this.time / 60.0;
 	}
-
-    // get a double from the user: no error handling
-    public double getDouble(String prompt) throws NumberFormatException, IOException {
-        BufferedReader cin = new BufferedReader(new InputStreamReader(System.in));
-
-        System.out.print(prompt);
-        double x = Double.parseDouble(cin.readLine());
-
-        return x;
-    } // end of getDouble()
+	
+	// get a non-negative double from the user
+	public double getNonnegDouble(String prompt) {
+		BufferedReader cin = new BufferedReader(new InputStreamReader(System.in));
+		double x = 0;
+		boolean valid;
+		do {
+			valid = true;
+			System.out.print(prompt);
+			try {
+				x = Double.parseDouble(cin.readLine());
+			} 
+			catch (NumberFormatException e) {
+				System.out.println("ERROR: Number format exception!\n");
+				valid = false;
+			} 
+			catch (IOException e) {
+				System.out.println("ERROR: IO exception!\n");
+				valid = false;
+			}
+			if (valid && x < 0) {
+				valid = false;
+				System.out.println("ERROR: Value must be non-negative!\n");
+			}
+		} while (!valid);
+		return x;
+	} // end of getNonnegDouble()
 	
 } // end DistanceCalculator class
