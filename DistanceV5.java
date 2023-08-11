@@ -1,8 +1,6 @@
-import java.io.*; // Needed for exception handling
-
 public class DistanceV5 {
 	
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) {
 		
 		DistanceCalculator dc = new DistanceCalculator();
 		dc.getUserInput();
