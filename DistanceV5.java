@@ -5,6 +5,8 @@ public class DistanceV5 {
 		DistanceCalculator dc = new DistanceCalculator();
         boolean doContinue = true;
         
+        System.out.println("A distance calculator in Java");
+        
         do {
             System.out.println("\n-----------------------------------------------------");
             System.out.println("Distance calculator (enter 0 for both values to quit)");
