@@ -16,7 +16,7 @@ public class DistanceCalculator {
 	}
 
 	public void printDistance() {
-		System.out.format("The distance traveled is %.3f miles.\n", this.calcDist());
+		System.out.format("The distance traveled is %.2f miles.\n", this.calcDist());
 	}
 	
 	public double calcDist() {
